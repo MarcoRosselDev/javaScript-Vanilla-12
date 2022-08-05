@@ -29,4 +29,10 @@ const items = document.querySelectorAll('.deadline-format h4')
 
 let futureData = new Date(2020, 4, 24, 17, 30, 0);
 
-console.log(futureData)
+console.log(futureData);
+
+const year = futureData.getFullYear();
+const hours = futureData.getHours();
+const minutes = futureData.getMinutes();
+
+giveaway.textContent = `giveaway ends on ${year} ${hours}:${minutes} `
