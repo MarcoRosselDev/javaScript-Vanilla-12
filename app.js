@@ -26,4 +26,7 @@ const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 /* querySelectorAll is really powefull */
 const items = document.querySelectorAll('.deadline-format h4')
-console.log(items);
+
+let futureData = new Date(2020, 4, 24, 17, 30, 0);
+
+console.log(futureData)
