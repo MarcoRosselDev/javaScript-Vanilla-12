@@ -26,7 +26,7 @@ const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 
-let futureDate = new Date(2022, 7, 6, 17, 30, 0);
+let futureDate = new Date(2022, 7, 6, 2, 1, 0);
 /* si lo dejo bacio se aplica la fecha actual */
 
 const year = futureDate.getFullYear();
@@ -73,12 +73,12 @@ function getRemainingTime(){
   items.forEach(function(item, index) {
     item.innerHTML = values[index];
   });
-  if(t < 0) {
+  if (t < 0) {
     clearInterval(countdown);
-    deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired</h4>`;
+    deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired!</h4>`;
   }
 }
 // contdown
-let countdown = setInterval(getRemainingTime, 1000)
+let countdown = setInterval(getRemainingTime, 1000);
 
 getRemainingTime(); 
