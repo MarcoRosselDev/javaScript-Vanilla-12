@@ -29,8 +29,6 @@ const items = document.querySelectorAll('.deadline-format h4')
 
 let futureData = new Date(2020, 4, 7, 17, 30, 0);/* si lo dejo bacio se aplica la fecha actual */
 
-console.log(futureData);
-
 const year = futureData.getFullYear();
 const hours = futureData.getHours();
 const minutes = futureData.getMinutes();
@@ -43,3 +41,13 @@ const weekday = weekdays[futureData.getDay()];
 
 giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
 
+/* future time in ms */
+const futureTime = futureData.getTime();
+console.log(futureTime);
+
+function getRemainingTime(){
+  const today = new Date().getTime();
+  console.log(today);/* tenemos el numero al que tenemos que restar futureTime */
+}
+
+getRemainingTime();
