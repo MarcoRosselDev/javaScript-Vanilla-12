@@ -53,7 +53,13 @@ function getRemainingTime(){
   // 1m = 60s
   // 1hr = 60min
   // 1d = 24hr
-  // 
+  
+  const oneDay = 24*60*60*1000;
+  const oneHour = 60*60*1000;
+  const oneMinute = 60*1000;
+  //calculate all values
+  let days = t/oneDay;
+  console.log(days);
 }
 
 getRemainingTime();
