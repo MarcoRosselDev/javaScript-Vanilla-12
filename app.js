@@ -24,26 +24,24 @@ const weekdays = [
 
 const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
-/* querySelectorAll is really powefull */
-const items = document.querySelectorAll('.deadline-format h4')
+const items = document.querySelectorAll('.deadline-format h4');
 
-let futureData = new Date(2020, 4, 7, 17, 30, 0);/* si lo dejo bacio se aplica la fecha actual */
+let futureDate = new Date(2023, 3, 26, 15, 30, 0);
+/* si lo dejo bacio se aplica la fecha actual */
 
-const year = futureData.getFullYear();
-const hours = futureData.getHours();
-const minutes = futureData.getMinutes();
+const year = futureDate.getFullYear();
+const hours = futureDate.getHours();
+const minutes = futureDate.getMinutes();
 
-let month = futureData.getMonth();
+let month = futureDate.getMonth();
 month = months[month];
-const weekday = weekdays[futureData.getDay()];
-const date = futureData.getDate();
-
-
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
+const weekday = weekdays[futureDate.getDay()];
+const date = futureDate.getDate();
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}`;
 
 /* future time in ms */
-const futureTime = futureData.getTime();
 
+const futureTime = futureDate.getTime();
 function getRemainingTime(){
   const today = new Date().getTime();
   const t = futureTime - today;
