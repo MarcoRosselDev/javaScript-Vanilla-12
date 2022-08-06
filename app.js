@@ -26,7 +26,7 @@ const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 
-let futureDate = new Date(2023, 3, 26, 15, 30, 0);
+let futureDate = new Date(2022, 7, 6, 17, 30, 0);
 /* si lo dejo bacio se aplica la fecha actual */
 
 const year = futureDate.getFullYear();
@@ -58,7 +58,15 @@ function getRemainingTime(){
   let days = t / oneDay;
   days = Math.floor(days);
   let hours = Math.floor((t % oneHour) / oneHour);
-  console.log(hours);
+  let minutes = Math.floor((t % oneHour) / oneMinute);
+  let seconds = Math.floor((t % oneMinute) / 1000);
+
+  // set values array;
+  const values = [days, hours, minutes, seconds];
+
+  items.forEach(function(item, index) {
+    item.innerHTML = values[index]
+  })
 }
 
 getRemainingTime();
