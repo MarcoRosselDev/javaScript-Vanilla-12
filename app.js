@@ -27,7 +27,7 @@ const deadline = document.querySelector('.deadline');
 /* querySelectorAll is really powefull */
 const items = document.querySelectorAll('.deadline-format h4')
 
-let futureData = new Date(2020, 4, 7, 17, 30, 0);
+let futureData = new Date(2020, 4, 7, 17, 30, 0);/* si lo dejo bacio se aplica la fecha actual */
 
 console.log(futureData);
 
@@ -39,7 +39,7 @@ let month = futureData.getMonth();
 month = months[month];
 const date = futureData.getDate();
 
-const weekday = futureData.getDay();
+const weekday = weekdays[futureData.getDay()];
 
-giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}:${minutes}am`;
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
 
