@@ -36,6 +36,10 @@ const hours = futureData.getHours();
 const minutes = futureData.getMinutes();
 
 let month = futureData.getMonth();
-console.log(months[month]);
+month = months[month];
+const date = futureData.getDate();
 
-giveaway.textContent = `giveaway ends on ${year} ${hours}:${minutes}am`;
+const weekday = futureData.getDay();
+
+giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}:${minutes}am`;
+
